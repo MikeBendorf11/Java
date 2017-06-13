@@ -1,0 +1,32 @@
+1. Spread 2 cards each player, user dealer
+2. if user= 21 and dealer<21 user wins
+	
+3. if user<21 and dealer=21 dealer wins
+	
+4. if user and dealer<21
+	- user hits or stands
+	- dealer apllies <16 rule
+
+
+PRINT RULES
+1. if any winner after 2 first cards, prints winners and all values
+	
+2. if userCardsNum != dealerCardsNum
+	- print both scores for (minimum CardsNum) times
+	- then print scores for the player with (maximum CardsNum) for CardsNum[difference] times
+		tabs to the left if userCardsNum minimum
+		tabs to the right if dealerCardsNum minimum
+
+PROGRAM IN GENERAL
+1. spread two cards each player: is anyone the winner so far?
+yes - print scores 
+
+2. no - Print 2 user cards and 1 dealer
+	- keep on printing user hits until 21 or more
+	- apply the <16 rule for dealer and print all scores
+
+
+
+
+
+
