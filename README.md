@@ -1,16 +1,28 @@
 ## JAVA ORIGINS ##
 
-	Friday, June 02, 2017 
+------------
+	Monday, June 19, 2017
 
-Chronologically, It's been one year of learning Java in 2015, 1 year of C Programming in 2016 and now I'm back to Java. I implemented some changes in the folder structure:
+------------
 
-- I decided to organize again my folders by packages, since I have a lot of small programs with *"main"* classes in them.  
-- From now on, classroom and internet learning examples will be collected in the *"Copy"* packages while my programs will be in the *"Mine"* package.
-- As I review older files and refresh knowledge, I'll add comments here and there, and I will also continue with the new assignments located in the 2017 folders.
+- Finished reviewing this useful [resource](https://www.protechtraining.com/bookshelf/java_fundamentals_tutorial/object_oriented?ncr=1) and created some projects to refresh my mind of some of the most important OOP concepts. 
+- Created a Codenvy workspace, practiced basic linux cmds, reviewed concepts such as classpath, sourcepath and used java and javax cmds to launch apps from CLI
+- Learned how to transform applets into runable jars
 
-Now it's time to review OOP concepts and continue with chapter 9: *"Exceptions"*, from *Javanotes*. 
+**About Codenvy:**
 
-[Check out more entries...](https://github.com/MikeBendorf11/Java_Origins/wiki "Java_Origins/wiki")
+Since I reorganized my learning programs in packages, launching an application from Codenvy CLI requires a different use of the commands java and javac without having to set up a classpath and sourcepath. 
+
+The command to launch looks like this:
+
+	cd /projects/JavaLearning/bOOP/AfollowsTheObj
+	javac *.java
+	java AEmployeeDemo AfollowsTheObj.AEmployee
+
+Next step will be to find out how to view JAR files or applets only by using cloud resources. 
+
+
+[Check out more entries...](https://github.com/MikeBendorf11/JavaLearning/wiki "JavaLearning/wiki")
 
 ------------------------------------
 
