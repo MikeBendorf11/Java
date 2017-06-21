@@ -1,4 +1,4 @@
-package aa_ExceptionsMine;
+package a_Exceptions;
 
 
 import java.io.*;

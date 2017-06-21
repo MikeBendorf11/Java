@@ -13,10 +13,11 @@
 
 Since I reorganized my learning programs in packages, launching an application from Codenvy CLI requires a different use of the commands java and javac without having to set up a classpath and sourcepath. 
 
-The command to launch looks like this:
+The launch command looks like this:
 
 	cd /projects/JavaLearning/bOOP/AfollowsTheObj
 	javac *.java
+	java ..
 	java AEmployeeDemo AfollowsTheObj.AEmployee
 
 Next step will be to find out how to view JAR files or applets only by using cloud resources. 

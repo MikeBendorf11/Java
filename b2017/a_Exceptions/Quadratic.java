@@ -1,6 +1,6 @@
-package aa_ExceptionsMine;
+package a_Exceptions;
 
-public class quadratic {
+public class Quadratic {
 	 static class IllegalArgumentException extends Exception {
          // This nested class is used to represent errors in the
          // user's input.
