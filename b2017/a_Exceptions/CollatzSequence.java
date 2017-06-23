@@ -37,7 +37,7 @@ public class CollatzSequence {
 		    	"The Collatz Sequence is generated from this formula: \n" +
 		    			"a) 3n + 1 if the number is odd\n" +
 		    			"b) n / 2 if the number is even\n" + 
-		    			"c) Continue until reaching 1");
+		    			"c) Continue until reaching 1\n\n");
 			} catch (myExceptions e) {
 				System.out.println("Error: " + e.getMessage());
 			}
@@ -51,7 +51,7 @@ public class CollatzSequence {
 			/* Thrown is like a return
 			 * Then an immediate "else{return x;}" alternative has 
 			 * to be offered for "transform();" to be complete*/
-			throw new myExceptions("Invalid Digit Input!");
+			throw new myExceptions("Numbers is all I need!");
 		} else {
 			N = new BigInteger(s);
 			return N;
@@ -87,4 +87,3 @@ public class CollatzSequence {
 	
 
 }
-

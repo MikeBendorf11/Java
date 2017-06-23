@@ -1,27 +1,19 @@
 ## JAVA ORIGINS ##
 
 ------------
-	Monday, June 19, 2017
+	Saturday, June 24, 2017
 
 ------------
 
-- Finished reviewing this useful [resource](https://www.protechtraining.com/bookshelf/java_fundamentals_tutorial/object_oriented?ncr=1) and created some projects to refresh my mind of some of the most important OOP concepts. 
-- Created a Codenvy workspace, practiced basic linux cmds, reviewed concepts such as classpath, sourcepath and used java and javax cmds to launch apps from CLI
-- Learned how to transform applets into runable jars
+I uploaded 2 assignments to [b2017/a_Exceptions](https://github.com/MikeBendorf11/JavaLearning/tree/master/b2017/a_Exceptions) called Quadtratic and Collatz sequence. 
 
-**About Codenvy:**
+Because I am programming between Linux and Windows environments, I stopped using the *TextIO.java* classes provided by the course author. These were designed for Windows and were not working with my Codenvy workspace. 
+Instead I will implement the Java scanner class and basic input validation.  
 
-Since I reorganized my learning programs in packages, launching an application from Codenvy CLI requires a different use of the commands java and javac without having to set up a classpath and sourcepath. 
+**Side notes:**
 
-The launch command looks like this:
-
-	cd /projects/JavaLearning/bOOP/AfollowsTheObj
-	javac *.java
-	java ..
-	java AEmployeeDemo AfollowsTheObj.AEmployee
-
-Next step will be to find out how to view JAR files or applets only by using cloud resources. 
-
+- I have almost 3 months before starting my C# program at U Washington and I want to cover the most Java topics before then.  
+- I have a very detailed list of big topics to cover such as Linked Data Structures, Recursion, Collection Classes, Networking, more GUI programming and basic mobile apps. 
 
 [Check out more entries...](https://github.com/MikeBendorf11/JavaLearning/wiki "JavaLearning/wiki")
 
