@@ -1,4 +1,4 @@
-package a_JARStruct;
+package a_AppletToJAR;
 
 import java.awt.event.*;
 import java.awt.*;
