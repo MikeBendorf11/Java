@@ -1,0 +1,210 @@
+package b_StackQueueTree;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TreeQueue {
+	private class TreeNode {
+		int item;
+		TreeNode left;
+		TreeNode right;
+
+		TreeNode(int number) {
+			item = number;
+		}
+
+		/* Methods necessary for the visual print method */
+		TreeNode getLeft() {
+			return left;
+		}
+
+		TreeNode getRight() {
+			return right;
+		}
+
+		String getText() {
+			return String.valueOf(item);
+		}
+	}
+
+	private TreeNode root;
+
+	/* This is a binary sort tree implementation. */
+	void insert(int newItem) {
+		if (root == null) {
+			root = new TreeNode(newItem);
+			return;
+		}
+		TreeNode runner;
+		runner = root;
+		while (true) {
+			if (newItem < runner.item) {
+
+				if (runner.left == null) {
+					runner.left = new TreeNode(newItem);
+					return;
+				} else
+					runner = runner.left;
+			} else {
+				if (runner.right == null) {
+					runner.right = new TreeNode(newItem);
+					return;
+				} else
+					runner = runner.right;
+			}
+		}
+	}
+
+	boolean contains(TreeNode root, int item) {
+		if (root == null) {
+			return false;
+		} else if (item == root.item) {
+			return true;
+		} else if (item < root.item) {
+			return contains(root.left, item);
+		} else {
+			return contains(root.right, item);
+		}
+	}
+
+	/* To be used from main so main doesn't have to access root */
+	void printCall() {
+		System.out.println("\n\nInOrder Printing: ");
+		print(root);
+		System.out.println("\n\nGraphical Version: ");
+		print2(root);
+	}
+
+	void print(TreeNode node) {
+		if (node != null) {
+			print(node.left);
+			System.out.print(node.item + " ");
+			print(node.right);
+		}
+	}
+
+	int countNodes(TreeNode node) {
+		if (node == null) {
+			return 0;
+		} else {
+			int leftCount = countNodes(node.left);
+			int rightCount = countNodes(node.right);
+			return 1 + leftCount + rightCount;
+		}
+	}
+
+	/* Method provided by MightyPork
+	 google@ how-to-print-binary-tree-diagram*/
+	public static void print2(TreeNode root) {
+		List<List<String>> lines = new ArrayList<List<String>>();
+
+		List<TreeNode> level = new ArrayList<TreeNode>();
+		List<TreeNode> next = new ArrayList<TreeNode>();
+
+		level.add(root);
+		int nn = 1;
+
+		int widest = 0;
+
+		while (nn != 0) {
+			List<String> line = new ArrayList<String>();
+
+			nn = 0;
+
+			for (TreeNode n : level) {
+				if (n == null) {
+					line.add(null);
+
+					next.add(null);
+					next.add(null);
+				} else {
+					String aa = n.getText();
+					line.add(aa);
+					if (aa.length() > widest)
+						widest = aa.length();
+
+					next.add(n.getLeft());
+					next.add(n.getRight());
+
+					if (n.getLeft() != null)
+						nn++;
+					if (n.getRight() != null)
+						nn++;
+				}
+			}
+
+			if (widest % 2 == 1)
+				widest++;
+
+			lines.add(line);
+
+			List<TreeNode> tmp = level;
+			level = next;
+			next = tmp;
+			next.clear();
+		}
+
+		int perpiece = lines.get(lines.size() - 1).size() * (widest + 2);
+		for (int i = 0; i < lines.size(); i++) {
+			List<String> line = lines.get(i);
+			int hpw = (int) Math.floor(perpiece / 2f) - 1;
+
+			if (i > 0) {
+				for (int j = 0; j < line.size(); j++) {
+
+					// split node
+					char c = ' ';
+					if (j % 2 == 1) {
+						if (line.get(j - 1) != null) {
+							c = (line.get(j) != null) ? '┴' : '┘';
+						} else {
+							if (j < line.size() && line.get(j) != null)
+								c = '└';
+						}
+					}
+					System.out.print(c);
+
+					// lines and spaces
+					if (line.get(j) == null) {
+						for (int k = 0; k < perpiece - 1; k++) {
+							System.out.print(" ");
+						}
+					} else {
+
+						for (int k = 0; k < hpw; k++) {
+							System.out.print(j % 2 == 0 ? " " : "─");
+						}
+						System.out.print(j % 2 == 0 ? "┌" : "┐");
+						for (int k = 0; k < hpw; k++) {
+							System.out.print(j % 2 == 0 ? "─" : " ");
+						}
+					}
+				}
+				System.out.println();
+			}
+
+			// print line of numbers
+			for (int j = 0; j < line.size(); j++) {
+
+				String f = line.get(j);
+				if (f == null)
+					f = "";
+				int gap1 = (int) Math.ceil(perpiece / 2f - f.length() / 2f);
+				int gap2 = (int) Math.floor(perpiece / 2f - f.length() / 2f);
+
+				// a number
+				for (int k = 0; k < gap1; k++) {
+					System.out.print(" ");
+				}
+				System.out.print(f);
+				for (int k = 0; k < gap2; k++) {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
+
+			perpiece /= 2;
+		}
+	}
+
+}
