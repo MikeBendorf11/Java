@@ -2,7 +2,7 @@ package b_StackQueueTree;
 
 public class TreeQueueDemo {
 	public static void main(String[] args) {
-		TreeQueue myTree = new TreeQueue();
+		TreeQueue3 myTree = new TreeQueue3();
 		int[]y = {85, 99, 92, 23, 15, 49, 83, 60, 89, 96};
 		
 		System.out.println("Order added: ");
@@ -11,8 +11,11 @@ public class TreeQueueDemo {
 			myTree.insert(y[i]);
 		}
 		
-		/*Changed console output to UTF-16*/
+		//InOrder Recursive Printing: 
 		myTree.printCall();
-
+		//Graphical Version: 
+		myTree.printCall2();
+		//Queue Non-recursive Printing
+		myTree.printCall3();
 	}
 }
