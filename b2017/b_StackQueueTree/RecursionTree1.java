@@ -1,5 +1,6 @@
 package b_StackQueueTree;
 
+
 public class RecursionTree1 {
 TreeNode root;
 	
@@ -10,6 +11,17 @@ TreeNode root;
 
 		TreeNode(int number) {
 			item = number;
+		}
+		TreeNode getLeft() {
+			return left;
+		}
+
+		TreeNode getRight() {
+			return right;
+		}
+
+		String getText() {
+			return String.valueOf(item);
 		}
 	}
 	

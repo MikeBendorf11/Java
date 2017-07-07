@@ -4,35 +4,32 @@ import java.util.Random;
 
 public class RecursionTreeDemo {
 
-    public static void main(String[] args) {
-        RecursionTree2 myTree = new RecursionTree2();
-        int[]y = {85, 99, 92, 23, 15, 49, 83, 60, 89, 96};
-        for (int i = 0; i < 10; i++) {
+	public static void main(String[] args) {
+		RecursionTree2 myTree = new RecursionTree2();
+		int[] y = { 85, 99, 92, 23, 15, 49, 83, 60, 89, 96 };
+		for (int i = 0; i < y.length; i++) {
 			myTree.insert(y[i]);
 		}
-        //myTree.counter(myTree.root);
-        myTree.counterD(myTree.root); 
-        /*
-        Random rdn = new Random();
-        int x;
-        
-        for(int i=0; i<1023; i++){
-            x = rdn.nextInt(10000) + 1;
-            myTree.insert(x);
-        }
-        
-        myTree.countLeaf(myTree.root); 
-		*/
-    }
-
+		myTree.depth();
+		System.out.print("\n\n");
+		myTree.print2(myTree.root);
+ 
+	}
 }
+/*
+Leaf: 15, Leafs Count: 1, Depth Sum: 2, Average Depth: 2.0
+Leaf: 60, Leafs Count: 2, Depth Sum: 6, Average Depth: 3.0
+Leaf: 89, Leafs Count: 3, Depth Sum: 9, Average Depth: 3.0
+Leaf: 96, Leafs Count: 4, Depth Sum: 12, Average Depth: 3.0
 
-/*The depth of a node in a binary tree is the length of the path from the root of the tree to that node.
-In an approximately balanced tree with 1023 nodes, the average depth of all the leaves should be not too much bigger than 9.
-To do this, you will need three recursive subroutines: 
-one to count the leaves, 
-one to find the sum of the depths of all the leaves, and 
-one to find the maximum depth. 
-The latter two subroutines should have an int-valued parameter, depth, that tells how deep in the tree you've gone. When you call this routine from the main program, the depth parameter is 0; when you call the routine recursively, the parameter increases by 1.
-*/
 
+                               85                               
+                ┌───────────────┴───────────────┐               
+               23                              99               
+        ┌───────┴───────┐               ┌───────┘               
+       15              49              92                       
+                        └───┐       ┌───┴───┐                   
+                           83      89      96                   
+                          ┌─┘                                   
+                         60                                     
+  	*/
