@@ -1,6 +1,25 @@
 ## JAVA ORIGINS ##
 
 ------------
+	Friday, Junly 9, 2017
+
+------------
+
+The Exercises [9.3, 9.4 and 9.5](https://github.com/MikeBendorf11/JavaLearning/tree/master/b2017/b_StackQueueTree) are now completed. Topics covered include Recursion, Stacks, Queues and Binary Trees
+
+Programs can be run from the *demo* files and every *demo* file contains a sample of the output. Exercises 9.4(TreeQueue) and 9.5(TreeRecursion)** are both included in [TreeQueueDemo.java](https://github.com/MikeBendorf11/JavaLearning/blob/master/b2017/b_StackQueueTree/TreeQueueDemo.java) because they share several sort binary tree methods.
+
+- **StackList**.- This program reverses a stack by copying its values to an array
+- **TreeQueue**.- Uses a non-recursive method to print a queue of tree nodes ordered by hierarchies. All granparents, then all children and so on.
+- **TreeRecursion**.- Calculates the average depth of a binary tree. I achieved this by creating a recursive method that sends the leaf depth to itself. 
+
+It was very useful to work with a graphical representation of a binary tree. This way I was able through witness *"the magic of recursion"* live as it travels to every node. Thanks to [MightyPork](https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram) for sharing this method. 
+
+The chapter *"Generic Programming and Collection Classes"*  is next.
+ 
+.
+
+------------
 	Friday, June 30, 2017
 
 ------------
@@ -24,21 +43,7 @@ A part of me says the answer to the question whether the tree will be balanced i
 Something similar happens in my brain when I think about `posfix` and `infix` mathematical expressions. 
 >*"Posfix makes more sense to computers, no point competing with them... but at least I'll try once... for now...".*  
 
-_
+.
 
------------
-	Saturday, June 24, 2017
-
-------------
-
-I uploaded 2 assignments to [b2017/a_Exceptions](https://github.com/MikeBendorf11/JavaLearning/tree/master/b2017/a_Exceptions) called Quadtratic and Collatz sequence. 
-
-Because I am programming between Linux and Windows environments, I stopped using the *TextIO.java* classes provided by the course author. These were designed for Windows and were not working with my Codenvy workspace. 
-Instead I will implement the Java scanner class and basic input validation.  
-
-**Side notes:**
-
-- I have almost 3 months before starting my C# program at U Washington and I want to cover the most Java topics before then.  
-- I have a very detailed list of big topics to cover such as Linked Data Structures, Recursion, Collection Classes, Networking, more GUI programming and basic mobile apps. 
 
 [**Check out more entries...**](https://github.com/MikeBendorf11/JavaLearning/wiki "JavaLearning/wiki")

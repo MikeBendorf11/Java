@@ -38,7 +38,8 @@ public class TreeQueue3 extends TreeQueue2 {
 		}
 	}
 	
-	/* Non-recursive Sort Tree Printing:
+	/* (EXERCISE 9.4) 
+	 * Non-recursive Sort Tree Printing:
 	 * Graphical representation demonstrates that this method
 	 * prints down through hierarchies (ex. all grandparents, all 
 	 * children)  */
@@ -49,15 +50,20 @@ public class TreeQueue3 extends TreeQueue2 {
 		qn.enqueue(root);
 		runner=head;
 		
-		System.out.println("\n\nNon-recursive Printing using Queues: ");
+		System.out.println("\n\n(Exercise 9.4) "
+				+ "\nNon-recursive Printing using Queues: ");
+		
 		//isEmpty() tests for empty trees, i tests for the last leaf node
 		for(int i = countNodes(root); !qn.isEmpty() && i>0; i--){
 			System.out.print(runner.tNode.item + " ");
+			
 			//queue any nodes under the current node
 			if(runner.tNode.left != null)
 				qn.enqueue(runner.tNode.left);
+			
 			if(runner.tNode.right != null)
 				qn.enqueue(runner.tNode.right);
+			
 			/* go to right node or return to left node which in queue
 			 * terms is just the next item */
 			runner=runner.next;
