@@ -27,8 +27,9 @@ public class Person {
 		Person p2 = new Person(30, Gender.MALE);
 		Person p3 = new Person(25, Gender.FEMALE);
 		Person p4 = new Person(15, Gender.FEMALE);
-
-		List<Person> people = Arrays.asList(p1, p2, p3, p4);
+		
+		//changed this to Arraylist (type Arrays only doesn't support remove)
+		List<Person> people = new ArrayList<Person>(Arrays.asList(p1, p2, p3, p4));
 		
 		for (Person person : people) 
 			System.out.println(person.getAge() + " " + person.getGender());
@@ -42,7 +43,7 @@ public class Person {
 		
 		Predicates rem = new Predicates();
 		
-		rem.remove(people, reMinor); //unsupported action for List<Person>
+		rem.remove(people, reMinor); //ConcurrentModificationException
 		
 		for (Person person : people) 
 			System.out.println(person.getAge() + " " + person.getGender());
