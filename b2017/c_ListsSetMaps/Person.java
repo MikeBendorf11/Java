@@ -1,15 +1,11 @@
 package c_ListsSetMaps;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
+import java.util.*;
 
 public class Person {
-	public enum Gender {MALE, FEMALE};
-	private int age;
-	private Gender sex;
+	enum Gender {MALE, FEMALE};
+	int age;
+	Gender sex;
 
 	Person(int age, Gender sex) {
 		this.age = age;
@@ -23,36 +19,47 @@ public class Person {
 	}
 	
 	public static void main(String[] args) {
-		Person p1 = new Person(35, Gender.MALE);
+		Person p1 = new Person(35, Gender.FEMALE);
 		Person p2 = new Person(30, Gender.MALE);
 		Person p3 = new Person(25, Gender.FEMALE);
-		Person p4 = new Person(15, Gender.FEMALE);
+		Person p4 = new Person(15, Gender.MALE);
 		
-		//changed this to Arraylist (type Arrays only doesn't support remove)
-		List<Person> people = new ArrayList<Person>(Arrays.asList(p1, p2, p3, p4));
+		ArrayList<Person> people = new ArrayList<Person>(Arrays.asList(p1, p2, p3, p4));
 		
-		for (Person person : people) 
-			System.out.println(person.getAge() + " " + person.getGender());
-		System.out.println("Next");
+		System.out.println("Initial List:");
+		print(people);
 		
-		Predicate<Person> reMinor = new Predicate<Person>(){
+		Predicate<Person> adults = new Predicate<Person>(){
 			public boolean test(Person person) {
-				return person.getAge() < 18;
+				return person.getAge() > 15;
+			}	
+		};
+		Predicate<Person> male = new Predicate<Person>(){
+			public boolean test(Person person) {
+				return person.getGender() == Gender.MALE;
+			}	
+		};
+		Predicate<Person> match = new Predicate<Person>(){
+			public boolean test(Person person) {
+				return person.getAge() == 15;
 			}	
 		};
 		
-		Predicates rem = new Predicates();
+		List<Person> people2 = (ArrayList<Person>)Predicates.keep(people, adults); 
+		List<Person> people3 = (ArrayList<Person>)Predicates.discard(people, male);
 		
-		rem.remove(people, reMinor); //ConcurrentModificationException
+		System.out.println("Retain adults:");
+		print(people2);
+		System.out.println("Remove male:");
+		print(people3);
+		System.out.println("Index of person with age 35:");
+		System.out.println(Predicates.find(people, match));
 		
-		for (Person person : people) 
-			System.out.println(person.getAge() + " " + person.getGender());
-		System.out.println("Next");
-		
-
-		
-		
-		
-		
+	}
+	
+	static void print(List<Person> l){
+		for (Person p : l)
+			System.out.println(p.getAge() + " " + p.getGender());
+		System.out.println();
 	}
 }
